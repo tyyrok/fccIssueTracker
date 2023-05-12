@@ -108,7 +108,6 @@ module.exports = function (app) {
                   }
                 }
                issue.updated_on = new Date();
-               console.log(issue);
                issue.save()
                     .then( (updatedIssue) => {
                       res.json({ result: 'successfully updated', '_id': updatedIssue._id });
@@ -137,7 +136,7 @@ module.exports = function (app) {
              })
              .catch( (err) => {
                console.log("Err while deleting - " + err);
-               res.json({ error: 'could not delete', '_id': req.body._id });
+               res.json({ error: 'could not delete', '_id': req.body._id                        });
              });
       }
     });
